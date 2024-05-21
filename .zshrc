@@ -16,6 +16,11 @@ if [ ! -d "$ZINIT_HOME" ]; then
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+# Default editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -75,6 +80,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias nv='nvim'
 alias c='clear'
+alias lsa='ls -a'
 
 # Shell integrations
 eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
