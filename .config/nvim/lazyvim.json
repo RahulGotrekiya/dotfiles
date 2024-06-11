@@ -1,0 +1,12 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.aerial",
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.ui.mini-indentscope",
+    "lazyvim.plugins.extras.util.mini-hipatterns"
+  ],
+  "news": {
+    "NEWS.md": "5204"
+  },
+  "version": 6
+}
