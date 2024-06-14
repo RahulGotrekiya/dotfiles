@@ -21,6 +21,7 @@ else
   echo "\x1b[38;2;255;92;87m  No Internet 󰩃\n"
 fi
 
+
 # curl wttr.in/Gandhinagar,%20Gujarat\?0q 
 # echo "
 # Abe tu Thoda sa bkl he kya !!!"

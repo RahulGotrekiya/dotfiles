@@ -1,8 +1,17 @@
-# My dotfiles
+<div>
+  <h1 align="center">My dotfiles<p align="center" dir="auto"> </p></h1>
+  
+</div>
 
-This directory contains the dotfiles for my system
+## ⚡ Screenshots
 
-## Requirements
+- **Zsh**
+
+<div align="center">
+  <img  align="center" src="https://github.com/RahulGotrekiya/dotfiles/assets/121397381/2af02d11-43c1-43a6-ac05-19374e1eb59f" width="600">
+</div>
+
+## 🚀 Requirements
 
 Ensure you have the following installed on your system
 
@@ -18,19 +27,24 @@ sudo dnf install git
 sudo dnf install stow
 ```
 
-## Installation
+## ⚙️ Installation
 
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
-$ git clone (repo-link)
+$ git clone https://github.com/RahulGotrekiya/dotfiles.git
+```
+
+Then go to dotfiles directory
+
+```
 $ cd dotfiles
 ```
 
-then use GNU stow to create symlinks
+then use GNU stow to create symlinks and stow the directory.
+
+Ex.
 
 ```
-$ stow .
+$ stow zsh
 ```
-
-**[Video](https://youtu.be/y6XCebnB9gs?si=oTmIDzriAjrAMbrT)**
