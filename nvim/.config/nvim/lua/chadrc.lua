@@ -6,7 +6,7 @@ local M = {}
 
 M.ui = {
   theme_toggle = { "onedark", "everblush" },
-  theme = "everblush",
+  theme = "onedark",
 
   hl_override = {
     Comment = { italic = true },

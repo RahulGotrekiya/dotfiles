@@ -47,6 +47,7 @@ return {
     opts = {
       ensure_installed = {
         "vim",
+        "tsx",
         "lua",
         "vimdoc",
         "html",
@@ -92,5 +93,18 @@ return {
       require("todo-comments").setup {}
     end,
     event = "BufRead", -- Lazy load the plugin when a buffer is read
+  },
+
+  -- HTML AutoCloser
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "php",
+      "html",
+    },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 }
