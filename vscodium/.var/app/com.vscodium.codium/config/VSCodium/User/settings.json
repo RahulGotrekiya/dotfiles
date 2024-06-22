@@ -1,0 +1,55 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "git.openRepositoryInParentFolders": "always",
+  "editor.stickyScroll.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "livePreview.notifyOnOpenLooseFile": false,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "workbench.settings.applyToAllProfiles": [],
+  "editor.mouseWheelZoom": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 20,
+  "editor.fontLigatures": true,
+  "editor.codeActionsOnSave": {},
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editorAssociations": {
+    "*.html": "default"
+  },
+  "explorer.confirmDelete": false,
+  "terminal.integrated.env.linux": {},
+  "console-ninja.featureSet": "Community",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "smooth",
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "files.autoSave": "afterDelay",
+  "workbench.preferredLightColorTheme": "Andromeda Colorizer",
+  "open-php-html-js-in-browser.customBrowserPath": "http://localhost/${relativeDirnameDocumentRoot}/${fileBasename}",
+  "open-php-html-js-in-browser.documentRootFolder": "/opt/lampp/htdocs/",
+  "open-php-html-js-in-browser.selectedBrowser": "Firefox",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.linkedEditing": true,
+  "liveServer.settings.port": 5555,
+  "workbench.colorTheme": "Andromeda Colorizer"
+}
