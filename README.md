@@ -18,13 +18,13 @@ Ensure you have the following installed on your system
 ### Git
 
 ```
-sudo dnf install git
+sudo pacman -S git
 ```
 
 ### Stow
 
 ```
-sudo dnf install stow
+sudo pacman -S stow
 ```
 
 ## ⚙️ Installation
