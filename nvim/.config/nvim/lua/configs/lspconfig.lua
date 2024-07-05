@@ -34,4 +34,8 @@ lspconfig.tsserver.setup {
       disableSuggessions = false,
     },
   },
+
+  lspconfig.emmet_ls.setup {
+    filetypes = { "html", "css", "php", "javascript", "javascriptreact", "typescriptreact" },
+  },
 }
