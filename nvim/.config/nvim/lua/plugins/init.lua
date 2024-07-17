@@ -38,7 +38,7 @@ return {
         "html-lsp",
         "css-lsp",
         "prettier",
-        "emmet_ls",
+        "emmet-ls",
       },
     },
   },
@@ -123,5 +123,15 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
    },
+  },
+
+  -- UndoTree
+  {
+    "jiaoshijie/undotree",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = true,
+    keys = { -- load the plugin only when using it's keybinding:
+      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>", desc = "UndoTree" },
+    },
   },
 }
