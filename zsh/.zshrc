@@ -21,19 +21,6 @@ else
   echo "\x1b[38;2;255;92;87m  No Internet 󰩃\n"
 fi
 
-
-# curl wttr.in/Gandhinagar,%20Gujarat\?0q 
-# echo "
-# Abe tu Thoda sa bkl he kya !!!"
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -51,8 +38,8 @@ export VISUAL=nvim
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in Powerlevel10k
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Add in ohmyposh
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/custom.toml)"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -74,15 +61,11 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
-
 
 # History
 HISTFILE=~/.zsh_history
@@ -130,3 +113,4 @@ eval "$(zoxide init --cmd cd zsh)"
 PATH=~/.console-ninja/.bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+source <(fzf --zsh)
