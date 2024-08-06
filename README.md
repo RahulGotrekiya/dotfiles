@@ -48,3 +48,7 @@ Ex.
 ```
 $ stow zsh
 ```
+
+<br>
+
+[Click here](./kanata/README.md) for kanata Configuration.
