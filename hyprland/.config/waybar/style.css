@@ -1,0 +1,77 @@
+@import url("colors.css");
+
+* {
+  font-family: "SF Pro Text", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 50px;
+  /*transition: 0.3s;*/
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @fg;
+}
+
+#workspaces button {
+  color: @light-purple;
+}
+
+#workspaces button.active {
+  background-color: @light-purple;
+  color: @bg;
+}
+
+#workspaces button:hover {
+  background-color: @light-aqua;
+}
+
+#workspaces {
+  background-color: @bg;
+  margin-left: 6px;
+}
+
+.modules-left {
+  margin-left: 12px;
+}
+
+.modules-right {
+  margin-right: 12px;
+}
+
+#custom-weather,
+#battery,
+#network,
+#pulseaudio,
+#backlight {
+  color: @light-blue;
+  background-color: @bg;
+  margin: 0 6px 0 6px;
+  padding: 0 15px 0 15px;
+}
+
+#clock {
+  color: @light-green;
+  background-color: @bg;
+  margin: 0 6px 0 0;
+  padding: 0 15px 0 15px;
+}
+
+#network {
+  color: @light-purple;
+}
+
+#pulseaudio {
+  color: @light-yellow;
+}
+
+#backlight {
+  color: @light-orange;
+}
+
+#custom-spotify {
+  color: #ffffff; /* Ensure text color is visible */
+  background-color: @bg;
+  margin: 0 6px 0 6px;
+  padding: 0 15px 0 15px;
+}

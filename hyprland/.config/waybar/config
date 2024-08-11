@@ -1,0 +1,91 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 8,
+    "modules-left": [
+        "hyprland/workspaces", 
+        "custom/spotify"
+    ],
+    "modules-center": [
+        "clock", 
+    ],
+    "modules-right": [
+        "pulseaudio", 
+        "battery", 
+        "network", 
+        "backlight"
+    ],
+
+    "battery": {
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+
+    "clock": {
+        "format": "󰥔   {:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "󰥔   {:%a, %d. %b  %I:%M %p}",
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "󰂱  {volume}%",
+        "format-muted": "󰖁",
+        "scroll-step": 1,
+        "on-click": "overskride",
+        "ignored-sinks": ["Easy Effects Sink"],
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰖀", "󰕾"]
+        },
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "on-click": "alacritty -e nmtui",
+        "format-wifi": "{icon}   {essid}",
+        "format-ethernet": "󰈀   {ipaddr}/{cidr}",
+        "format-disconnected": "󰤭   disconnected",
+        "max-length": 50,
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+        },
+        "sort-by-number": true
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}   {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+    
+    "custom/spotify": {
+        "format": " {title} - {artist}",
+        "exec": "playerctl metadata --format '{{ title }} - {{ artist }}'",
+        "interval": 5,
+        "on-click": "playerctl play-pause",
+        "tooltip": false,
+        "exec-if": "playerctl -l | grep -q spotify"
+    }
+}
