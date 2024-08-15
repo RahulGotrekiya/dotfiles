@@ -48,7 +48,7 @@
 
     "network": {
         "format": "{ifname}",
-        "on-click": "alacritty -e nmtui",
+        "on-click": "~/.config/hypr/scripts/rofi-wifi-menu.sh",
         "format-wifi": "{icon}   {essid}",
         "format-ethernet": "󰈀   {ipaddr}/{cidr}",
         "format-disconnected": "󰤭   disconnected",
@@ -59,6 +59,8 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
+        "on-scroll-up": "~/.config/hypr/scripts/workspace.sh prev",
+        "on-scroll-down": "~/.config/hypr/scripts/workspace.sh next",
         "format-icons": {
             "1": "1",
             "2": "2",
@@ -77,15 +79,18 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon}   {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"]
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "~/.config/hypr/scripts/brightness --inc",
+        "on-scroll-down": "~/.config/hypr/scripts/brightness --dec",
+        "smooth-scrolling-threshold": 1,
     },
     
     "custom/spotify": {
-        "format": " {title} - {artist}",
-        "exec": "playerctl metadata --format '{{ title }} - {{ artist }}'",
-        "interval": 5,
+        "exec": "python3 ~/.config/hypr/scripts/mediaplayer.py --player spotify",
+        "format": "  {}",
+        "return-type": "json",
         "on-click": "playerctl play-pause",
-        "tooltip": false,
-        "exec-if": "playerctl -l | grep -q spotify"
-    }
+        "on-double-click-right": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+      },
 }

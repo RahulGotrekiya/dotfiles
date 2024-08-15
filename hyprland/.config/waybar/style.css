@@ -70,7 +70,7 @@ window#waybar {
 }
 
 #custom-spotify {
-  color: #ffffff; /* Ensure text color is visible */
+  color: @light-blue; /* Ensure text color is visible */
   background-color: @bg;
   margin: 0 6px 0 6px;
   padding: 0 15px 0 15px;
