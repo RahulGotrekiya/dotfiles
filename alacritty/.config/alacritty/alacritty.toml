@@ -1,25 +1,37 @@
-import = ["/home/rahul/.config/alacritty/colors.toml", "/home/rahul/.config/alacritty/fonts.toml"]
+import = [
+  "/home/rahul/.config/alacritty/colors.toml", "/home/rahul/.config/alacritty/fonts.toml",
+]
+# import = ["~/.cache/wal/colors-alacritty.toml", "/home/rahul/.config/alacritty/fonts.toml"]
+
 live_config_reload = true
 
 [cursor]
+blink_interval = 550
 unfocused_hollow = false
 
 [cursor.style]
+blinking = "On"
 shape = "Block"
 
 [env]
-TERM = "alacritty"
+TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
 dynamic_title = true
-# gtk_theme_variant = "dark"
+# opacity = 0.5
+blur = true
+decorations = "full"
 
 [window.dimensions]
-columns = 115
-lines = 20
+columns = 120
+lines = 29
 
 [window.padding]
-x = 15
-y = 15
+x = 25
+y = 25
 
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"

@@ -7,3 +7,12 @@ size = 14.0
 [font.normal]
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
+#
+# [font.bold]
+# family = "JetBrainsMono Nerd Font"
+#
+# [font.bold_italic]
+# family = "JetBrainsMono Nerd Font"
+#
+# [font.italic]
+# family = "JetBrainsMono Nerd Font"
