@@ -36,6 +36,6 @@ lspconfig.tsserver.setup {
   },
 
   lspconfig.emmet_ls.setup {
-    filetypes = { "html", "css", "php", "javascript", "javascriptreact", "typescriptreact" },
+    filetypes = { "html", "css", "php", "javascriptreact", "typescriptreact" },
   },
 }

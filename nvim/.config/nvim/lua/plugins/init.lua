@@ -14,6 +14,7 @@ return {
   require "plugins.custom.tmux-navigator", -- Tmux navigator
   require "plugins.custom.surround", -- Surround
   require "plugins.custom.file-browser", -- Telescope File browser
+  require "plugins.custom.lazygit", -- lazygit
 
   -- These are some examples, uncomment them if you want to see them work!
   {
