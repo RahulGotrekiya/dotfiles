@@ -36,5 +36,6 @@
   "ui": { "branch": "v2.5", "commit": "23a5a720d1a7389175eca2b2bdd9d5d17b45071e" },
   "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" },
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
-  "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" }
+  "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" },
+  "yazi.nvim": { "branch": "main", "commit": "df7c476ee9a844603773f662de7c17e7994c378e" }
 }

@@ -15,6 +15,7 @@ return {
   require "plugins.custom.surround", -- Surround
   require "plugins.custom.file-browser", -- Telescope File browser
   require "plugins.custom.lazygit", -- lazygit
+  require "plugins.custom.yazi", -- yazi
 
   -- These are some examples, uncomment them if you want to see them work!
   {
