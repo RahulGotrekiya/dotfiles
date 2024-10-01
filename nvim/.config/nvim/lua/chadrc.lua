@@ -7,13 +7,19 @@ local M = {}
 M.base46 = {
   theme_toggle = { "onedark", "everblush" },
   theme = "everblush",
-  -- transparency = true,
+  transparency = true,
 }
 
 M.ui = {
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
+  },
+
+  cmp = {
+    icons = true,
+    style = "default",
+    icons_left = true,
   },
 
   statusline = {

@@ -21,7 +21,10 @@ return {
   require "plugins.custom.ts-autotag", -- HTML AutoCloser
   require "plugins.custom.undotree", -- UndoTree
   require "plugins.custom.flash", -- flash.nvim for Jumping
-  require "plugins.custom.highlight-colors", -- Highlight colors
+  require "plugins.custom.codeium", -- Codeium
+  require "plugins.custom.zenmode", -- Zen mode
+  require "plugins.custom.twilight", -- Twilight
+  require "plugins.custom.colorpicker", -- Color Picker
 
   -- (Defaults) These are some examples, uncomment them if you want to see them work!
   {
@@ -48,6 +51,7 @@ return {
         "css-lsp",
         "prettier",
         "emmet-ls",
+        "intelephense",
       },
     },
   },
