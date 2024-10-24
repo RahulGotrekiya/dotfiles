@@ -2,29 +2,33 @@
 
 version = 2
 final_space = true
+# auto_upgrade = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
 [palette]
+   fore='#6c6c6c'
    grey='242'
    red='#FF5C57'
    yellow='#F3F99D'
+   yellow2='#FFD664'
    blue='#57C7FF'
    magenta='#FF6AC1'
    cyan='#9AEDFE'
    white='#F1F1F0'
+   purple='#a074c4'
 
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
-
-  # [[blocks.segments]]
-  # foreground = "p:blue"
-  # style = "plain"
-  # template = "{{.Icon}} "
-  # type = "os"
+  newline = true  
 
   [[blocks.segments]]
+    type = "upgrade"
+    style = "plain"
+    foreground = "yellow2"
+    background = "transparent"
+
+ [[blocks.segments]]
     type = "path"
     style = "plain"
     background = "transperent"
@@ -37,21 +41,21 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = '#6c6c6c'
+    foreground = 'fore'
     background = 'transperent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}'
-
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     [blocks.segments.properties]
       branch_icon = '󰘬 '
+      tag_icon = ' '
       commit_icon = '@'
       fetch_status = true
 
   [[blocks.segments]]
     type = "php"
     style = "plain"
-    foreground = "#a074c4"
+    foreground = "purple"
     background = "transperent"
-    template = " {{ .Full }}"
+    template = "  {{ .Full }}"
 
   [[blocks.segments]]
     type = "lua"
@@ -72,11 +76,17 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   overflow = 'hidden'
 
   [[blocks.segments]]
+  foreground = "p:blue"
+  style = "plain"
+  template = "{{.Icon}} " 
+  type = "os"
+
+  [[blocks.segments]]
     type = 'executiontime'
     style = 'plain'
     foreground = 'p:yellow'
     background = 'transparent'
-    template = '{{ .FormattedMs }}'
+    template = ' {{ .FormattedMs }}'
 
     [blocks.segments.properties]
       threshold = 5000
@@ -84,16 +94,10 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'time'
     style = 'plain'
-    foreground = '#6c6c6c'
+    foreground = 'fore'
     
     [blocks.segments.properties]
       time_format = '15:04:05'
-
-  [[blocks.segments]]
-    type = "upgrade"
-    style = "plain"
-    foreground = "#111111"
-    background = "#FFD664"
 
 [[blocks]]
     type = 'prompt'
@@ -109,6 +113,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   ]
     background = 'transperent'
     template = ' ❯'
+    # template = '❯'
 
 [transient_prompt]
   foreground_templates = [
