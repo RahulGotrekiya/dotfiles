@@ -1,9 +1,11 @@
-import = [
-  "/home/rahul/.config/alacritty/colors.toml", "/home/rahul/.config/alacritty/fonts.toml",
-]
-# import = ["~/.cache/wal/colors-alacritty.toml", "/home/rahul/.config/alacritty/fonts.toml"]
-
+[general]
 live_config_reload = true
+
+import = [
+  "~/.config/alacritty/colors.toml", 
+  # "~/.cache/wal/colors-alacritty.toml",
+  "~/.config/alacritty/fonts.toml",
+]
 
 [cursor]
 blink_interval = 550
@@ -19,7 +21,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
 dynamic_title = true
-# opacity = 0.5
+# opacity = 0.8
 blur = true
 decorations = "full"
 
