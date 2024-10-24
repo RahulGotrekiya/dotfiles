@@ -8,6 +8,7 @@ local servers = {
   "html",
   "cssls",
   "clangd",
+  "eslint",
   "ts_ls",
   "tailwindcss",
   "intelephense",

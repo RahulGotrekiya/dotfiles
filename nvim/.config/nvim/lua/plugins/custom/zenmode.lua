@@ -21,14 +21,17 @@ return {
         enabled = true,
         font = "18", -- font size
       },
-      kitty = { enabled = false, font = "+2" },
+      kitty = {
+        enabled = true,
+        font = "+2",
+      },
       options = {
         enabled = true,
         ruler = true,
         showcmd = false,
         laststatus = 0,
       },
-      twilight = { enabled = true },
+      twilight = { enabled = false },
     },
   },
   keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },

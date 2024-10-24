@@ -1,10 +1,8 @@
+---@type NvPluginSpec
 return {
   "windwp/nvim-ts-autotag",
-  ft = {
-    "javascript",
-    "php",
-    "html",
-  },
+  event = "InsertEnter",
+  dependencies = { "nvim-treesitter" },
   config = function()
     require("nvim-ts-autotag").setup()
   end,
