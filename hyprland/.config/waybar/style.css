@@ -1,109 +1,257 @@
-@import url("/home/rahul/.cache/wal/colors-waybar.css");
-/*@import url("colors.css");*/
-
 * {
+  font-size: 13px;
   font-family: "Radio Canada Big", sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  border-radius: 50px;
+  /* letter-spacing: 1px; */
+  font-weight: 600;
 }
 
 window#waybar {
-  background-color: transparent;
-  color: @background;
+  /* margin-top: 4; */
+  background: rgba(0, 0, 0, 0);
+  /* background-color: rgba(46, 52, 64, 0.8); */
+  color: #ffffff;
+  /* border-radius: 4px; */
+  /* border: 2px solid #2E3440; */
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-#workspaces button {
-  padding-right: 11px;
-  padding-left: 6px;
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
-#workspaces button.urgent {
-  color: @color3;
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
-#workspaces button.active:hover {
-  color: @background;
-}
-
-#workspaces button.active {
-  color: @foreground;
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces {
-  background-color: @background;
+  color: #ffffff;
 }
 
-.modules-left {
-  margin-left: 20px;
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #ffffff;
 }
 
-.modules-right {
-  margin-right: 20px;
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
-#custom-notifications,
-#mpris,
-#bluetooth,
-#custom-pacman,
+#workspaces button.focused {
+  background-color: transparent;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
 #battery,
-#pulseaudio,
+#cpu,
+#memory,
+#disk,
+#temperature,
 #backlight,
 #network,
-#custom-weather,
-#custom-media {
-  color: @color5; /* color5 */
-  background-color: @background; /* background */
-  margin: 0 6px 0 6px;
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+  padding: 0 10px;
+  color: #ffffff;
 }
 
-#network {
-  color: @color2; /* color2 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#disk {
+  background-color: #964b00;
+}
+
+#tray {
+  /* background-color: #1d1f21; */
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#idle_inhibitor.activated {
+  color: #be3509;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#mpd {
+  /* background-color: #66cc99; */
+  color: #ffffff;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+}
+
+#mpd.stopped {
+  /* background-color: #90b1b1; */
+}
+
+#mpd.paused {
+  /* background-color: #51a37a; */
+}
+
+#scratchpad {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+  background-color: transparent;
 }
 
 #clock {
-  color: @color3; /* color3 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px;
-  margin-right: 6px;
+  margin: 3px 3px 3px 3px;
+  padding: 5px;
+  color: #fff;
+  /* background: #1d1f21; */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #ffffff;
+  font-weight: 700;
 }
 
-#backlight {
-  color: @color3; /* color5 */
-  margin: 0 0 0 6px;
-}
-
-#battery {
-  color: @color1;
-}
-
-#network {
-  color: @color4; /* color4 */
-}
-
-#pulseaudio {
-  color: @color5; /* color5 */
-}
-
-#custom-weather {
-  color: @color4; /* color2 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
-}
-
-#custom-pacman {
-  color: @color8;
+#hyprland-workspaces {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  /* background: #1d1f21; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #custom-media {
-  color: @color6; /* color2 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+  min-width: 100px;
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  /* background: #1d1f21; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#pulseaudio {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  /* background: #1d1f21; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-#bluetooth {
-  color: @color5;
+#network {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  /* background: #1d1f21; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#cpu {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  /* background: #001d1f21; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#temperature {
+  color: #ffffff;
+}
+
+#memory {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  /* background: #1d1f21; */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#custom-media {
+  color: #ffffff;
+  margin: 3px 3px 3px 3px;
+  padding: 5px 7px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }

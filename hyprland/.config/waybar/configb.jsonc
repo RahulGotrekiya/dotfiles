@@ -1,30 +1,31 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "margin-top": 4,
     "height": 30, // Waybar height (to be removed for auto height)
-    "width": 1910, // Waybar width
-    "spacing": 1, // Gaps between modules (4px)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     // "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
-    "modules-left": ["hyprland/workspaces", "hyprland/window", "hyprland/mode", "hyprland/scratchpad"], 
-    "modules-center": ["custom/media"],
-    "modules-right": ["network", "pulseaudio", "battery", "clock", "backlight"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["mpd"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
     "hyprland/workspaces": {
-      "disable-scroll": true,
-      "all-outputs": true,
-      "format": "{icon}",
-      "format-icons": {
-        "urgent": "󰀨",
-        // "active": " 🦆",
-        "active": "",
-        "default": ""
-      },  
-      "sort-by-number": true
-    },
-  
-    "keyboard-state": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+       "keyboard-state": {
         "numlock": true,
         "capslock": true,
         "format": "{name} {icon}",
@@ -82,16 +83,16 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "format": "{:%A %B %d  %H:%M}",
+        "format": "{:%A, %d %B | %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "<span font='14' rise='-2000'> </span>  {usage}%",
+        "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "<span font='14' rise='-2000'> </span>  {}%",
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -99,7 +100,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", " ", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -108,43 +109,40 @@
     },
     "battery": {
         "states": {
-            "good": 95,
+            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "<span font='14' rise='-3000'>{icon}</span>  {capacity}%",
-        "format-charging": "   {capacity}%",
-        //"format-charging": "󰂄  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",        
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
-        "format-full": "",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "interval": 1
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
     },
-    // "battery#bat2": {
-    //     "bat": "BAT2"
-    // },
-  "network": {
-    "on-click-right": "kitty --title nmtui-special nmtui",
-    "format": "{ifname}",
-    "format-alt": "<span foreground='#99ffdd'>   {bandwidthDownBytes}</span> <span foreground='#ffcc66'>   {bandwidthUpBytes}</span>",
-    "format-wifi": "{icon}    {essid}",
-    "format-ethernet": "󰈀   Ethernet",
-    "format-disconnected": "󰤭   disconnected",
-    "max-length": 50,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
-  },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "<span font='14' rise='-3000'>{icon}</span>  {volume}% ",
+        "format": "{icon}   {volume}% ",
         "format-bluetooth": "{icon}   {volume}%  ",
-        // "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "󰖁  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "default": [" ", " ", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
@@ -158,6 +156,6 @@
         },
         "escape": true,
         // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
