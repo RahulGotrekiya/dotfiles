@@ -1,0 +1,195 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 8,
+  "modules-left": [
+        "clock",
+        "custom/weather",
+        "mpris",
+        "custom/media",
+        "custom/notifications"
+  ],
+  "modules-center": [
+        "hyprland/workspaces"
+  ],
+  "modules-right": [
+        "bluetooth",
+        "custom/pacman",
+        "pulseaudio",
+        "network",
+        "battery",
+        "backlight"
+  ],
+
+  "custom/pacman": {
+    "format": "{}",
+    "interval": "once",
+    "exec": "$HOME/.config/waybar/scripts/systemupdate.sh",
+    "return-type": "json",
+    "on-click": "hyprctl dispatch exec '$HOME/.config/waybar/scripts/systemupdate.sh up'",
+    "signal": 8
+  },
+
+  "custom/media": {
+    "format": "{icon}{}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "   {capacity}%",
+    //"format-charging": "󰂄  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "interval": 1
+  },
+
+  "clock": {
+    "format": "󰥔   {:%I:%M %p}",
+    "format-alt": "󰥔   {:%a, %d. %b  %I:%M %p}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }     
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon}   {volume}%",
+    //"format-bluetooth": "󰂱  {volume}%",
+    "format-bluetooth": "    {volume}%",
+    "format-muted": "󰖁",
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "format-icons": {
+      "headphone": "  ",
+      "hands-free": "  ",
+      "headset": "󰋎 ",
+      "phone": " ",
+      "portable": " ",
+      "car": "",
+      "default": ["󰖀", "󰕾"]
+    }
+  },
+
+  "network": {
+    //"interface": "wlo1",
+    "on-click-right": "kitty --title nmtui-special nmtui",
+    "format": "{ifname}",
+    "format-alt": "<span foreground='#99ffdd'>   {bandwidthDownBytes}</span> <span foreground='#ffcc66'>   {bandwidthUpBytes}</span>",
+    "format-wifi": "{icon}    {essid}",
+    "format-ethernet": "󰈀   Ethernet",
+    "format-disconnected": "󰤭   disconnected",
+    "max-length": 50,
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate", 
+    "on-scroll-up": "~/.config/hypr/scripts/workspace.sh prev",
+    "on-scroll-down": "~/.config/hypr/scripts/workspace.sh next",
+    "format-icons": {
+      "urgent": "󰀨",
+      // "active": " 🦆",
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}   {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Gandhinagar",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " {num_connections}",
+    "format-connected-battery": "{icon}  {num_connections}",
+    "format-connected-battery": "{icon}  {device_alias}-{device_battery_percentage}%",
+    "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+    "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
+    "max-length": 15
+    },
+
+    "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": { 
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": ""
+    },
+    "max-length": 20,
+    "interval": 1
+    },
+
+    "custom/notifications": {
+    "format": "{icon} {}",
+    "format-icons": {
+      "email-notification": "<span foreground='white'><sup></sup></span>",
+      "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
+      "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
+      "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
+      "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
+      "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+      "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
+      "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
+      "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+      "notification": "<span foreground='white'><sup></sup></span>",
+      "dnd": "",
+      "none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which dunstctl",
+    "exec": "~/Documents/hyprdots/Configs/.local/share/bin/notifications.py",
+    "on-scroll-down": "sleep 0.1 && dunstctl history-pop",
+    "on-click": "dunstctl set-paused toggle",
+    "on-click-middle": "dunstctl history-clear",
+    "on-click-right": "dunstctl close-all",
+    "interval": 1,
+    "tooltip": true
+    // "escape": true
+  }
+}
+

@@ -1,4 +1,4 @@
-@define-color bg #1d1f21;
+/*@define-color bg #1d1f21;
 @define-color fg #c5c8c6;
 
 @define-color light-aqua #70c0ba;
@@ -7,3 +7,15 @@
 @define-color light-purple #b294bb;
 @define-color light-yellow #e6c547;
 @define-color light-orange #cc6666;
+*/
+
+/* @define-color background #1d1f21; */
+@define-color background #271638;
+@define-color foreground #c5c8c6;
+
+@define-color color1 #70c0ba;
+@define-color color2 #81a2be;
+@define-color color3 #b5bd68;
+@define-color color4 #b294bb;
+@define-color color5 #e6c547;
+@define-color color6 #cc6666;

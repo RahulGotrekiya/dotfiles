@@ -1,77 +1,109 @@
-@import url("colors.css");
+@import url("/home/rahul/.cache/wal/colors-waybar.css");
+/*@import url("colors.css");*/
 
 * {
-  font-family: "SF Pro Text", sans-serif;
+  font-family: "Radio Canada Big", sans-serif;
   font-weight: bold;
   font-size: 15px;
   border-radius: 50px;
-  /*transition: 0.3s;*/
 }
 
 window#waybar {
   background-color: transparent;
-  color: @fg;
+  color: @background;
 }
 
 #workspaces button {
-  color: @light-purple;
+  padding-right: 11px;
+  padding-left: 6px;
+}
+
+#workspaces button.urgent {
+  color: @color3;
+}
+
+#workspaces button.active:hover {
+  color: @background;
 }
 
 #workspaces button.active {
-  background-color: @light-purple;
-  color: @bg;
-}
-
-#workspaces button:hover {
-  background-color: @light-aqua;
+  color: @foreground;
 }
 
 #workspaces {
-  background-color: @bg;
-  margin-left: 6px;
+  background-color: @background;
 }
 
 .modules-left {
-  margin-left: 12px;
+  margin-left: 20px;
 }
 
 .modules-right {
-  margin-right: 12px;
+  margin-right: 20px;
 }
 
-#custom-weather,
+#custom-notifications,
+#mpris,
+#bluetooth,
+#custom-pacman,
 #battery,
-#network,
 #pulseaudio,
-#backlight {
-  color: @light-blue;
-  background-color: @bg;
+#backlight,
+#network,
+#custom-weather,
+#custom-media {
+  color: @color5; /* color5 */
+  background-color: @background; /* background */
   margin: 0 6px 0 6px;
-  padding: 0 15px 0 15px;
-}
-
-#clock {
-  color: @light-green;
-  background-color: @bg;
-  margin: 0 6px 0 0;
-  padding: 0 15px 0 15px;
+  padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
 #network {
-  color: @light-purple;
+  color: @color2; /* color2 */
+  background-color: @background; /* background */
+  padding: 0 15px 0 15px; /* top, right, bottom, left */
 }
 
-#pulseaudio {
-  color: @light-yellow;
+#clock {
+  color: @color3; /* color3 */
+  background-color: @background; /* background */
+  padding: 0 15px 0 15px;
+  margin-right: 6px;
 }
 
 #backlight {
-  color: @light-orange;
+  color: @color3; /* color5 */
+  margin: 0 0 0 6px;
 }
 
-#custom-spotify {
-  color: @light-blue; /* Ensure text color is visible */
-  background-color: @bg;
-  margin: 0 6px 0 6px;
-  padding: 0 15px 0 15px;
+#battery {
+  color: @color1;
+}
+
+#network {
+  color: @color4; /* color4 */
+}
+
+#pulseaudio {
+  color: @color5; /* color5 */
+}
+
+#custom-weather {
+  color: @color4; /* color2 */
+  background-color: @background; /* background */
+  padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
+#custom-pacman {
+  color: @color8;
+}
+
+#custom-media {
+  color: @color6; /* color2 */
+  background-color: @background; /* background */
+  padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
+#bluetooth {
+  color: @color5;
 }
