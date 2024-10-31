@@ -1,8 +1,8 @@
-# Kanata Configuration for Caps Lock to Esc + Ctrl
+# Kanata Configuration for Caps Lock to Esc + Ctrl and Home Row Mods
 
 ## Overview
 
-This Kanata configuration remaps the Caps Lock key to function as a combination of Esc and Ctrl. This setup allows you to use Caps Lock as either an Esc key or a Ctrl key depending on how it is tapped or held.
+This Kanata configuration remaps the Caps Lock key to function as both **Esc** and **Ctrl**, and the **ASDF** and ;**LKJ** keys to **Super, Alt, Shift,** and **Ctrl**, respectively. This setup allows you to use the Caps Lock key as an **Esc** key when tapped or as a **Ctrl** key when held. Similarly, it enables the **ASDF** keys to act as **Super**, **Alt**, **Shift**, and **Ctrl** when held, and the ;**LKJ** keys to act as **Super**, **Alt**, **Shift**, and **Ctrl** when held.
 
 ## Configuration
 
@@ -14,6 +14,29 @@ The configuration consists of:
   - When tapped: Sends `Esc`
   - When held: Sends `Ctrl`
 
+- **A**:
+  - When held: Sends `Super`
+
+- **S**:
+  - When held: Sends `Alt`
+
+- **D**:
+  - When held: Sends `Shift`
+
+- **F**:
+  - When held: Sends `Ctrl`
+
+- **; (Semicolon)**:
+  - When held: Sends `Super`
+
+- **L**:
+  - When held: Sends `Alt`
+
+- **K**:
+  - When held: Sends `Shift`
+
+- **J**:
+  - When held: Sends `Ctrl`
 ### How to config
 
 1. **Install Kanata**:
