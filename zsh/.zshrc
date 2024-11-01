@@ -72,9 +72,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias nv='nvim'
 alias c='clear'
 alias rrr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-alias xstart='sudo /opt/lampp/lampp start'
-alias xstop='sudo /opt/lampp/lampp stop'
-alias xrstart='sudo /opt/lampp/lampp restart'
+alias lampp='sudo /opt/lampp/lampp start'
+alias slampp='sudo /opt/lampp/lampp stop'
+alias rlampp='sudo /opt/lampp/lampp restart'
 
 # ls replaced with eza 
 alias ls='eza --icons'
