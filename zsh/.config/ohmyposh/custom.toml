@@ -33,7 +33,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = "plain"
     background = "transperent"
     foreground = "p:blue"
-    template = '{{ .Path  }}'    
+    template = '<b>{{ .Path  }}</b>'    
 
     [blocks.segments.properties]
       style = 'full'
@@ -102,7 +102,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [[blocks]]
     type = 'prompt'
     alignment = 'left'
-    # newline = true
+    newline = true
 
   [[blocks.segments]]
     type = 'text'
@@ -112,8 +112,8 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       "{{if eq .Code 0}}p:magenta{{end}}",
   ]
     background = 'transperent'
-    template = ' ❯'
-    # template = '❯'
+    # template = ' ❯'
+    template = '❯'
 
 [transient_prompt]
   foreground_templates = [

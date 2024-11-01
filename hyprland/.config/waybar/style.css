@@ -1,5 +1,5 @@
-@import url("/home/rahul/.cache/wal/colors-waybar.css");
-/*@import url("colors.css");*/
+/* @import url("/home/rahul/.cache/wal/colors-waybar.css"); */
+@import url("colors.css");
 
 * {
   font-family: "Radio Canada Big", sans-serif;
@@ -51,7 +51,8 @@ window#waybar {
 #backlight,
 #network,
 #custom-weather,
-#custom-media {
+#custom-media,
+#keyboard-state {
   color: @color5; /* color5 */
   background-color: @background; /* background */
   margin: 0 6px 0 6px;

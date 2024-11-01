@@ -2,23 +2,24 @@
   "layer": "top",
   "position": "top",
   "margin-top": 8,
+
   "modules-left": [
-        "clock",
-        "custom/weather",
-        "mpris",
-        "custom/media",
-        "custom/notifications"
+    "clock",
+    "custom/weather",
+    "mpris",
   ],
+
   "modules-center": [
-        "hyprland/workspaces"
+    "hyprland/workspaces"
   ],
+
   "modules-right": [
-        "bluetooth",
-        "custom/pacman",
-        "pulseaudio",
-        "network",
-        "battery",
-        "backlight"
+    "bluetooth",
+    "custom/pacman",
+    "pulseaudio",
+    "network",
+    "battery",
+    "backlight"
   ],
 
   "custom/pacman": {
@@ -100,11 +101,11 @@
     "on-click-right": "kitty --title nmtui-special nmtui",
     "format": "{ifname}",
     "format-alt": "<span foreground='#99ffdd'>   {bandwidthDownBytes}</span> <span foreground='#ffcc66'>   {bandwidthUpBytes}</span>",
-    "format-wifi": "{icon}    {essid}",
+    "format-wifi": "{icon} {essid}",
     "format-ethernet": "󰈀   Ethernet",
     "format-disconnected": "󰤭   disconnected",
     "max-length": 50,
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
   },
 
   "hyprland/workspaces": {
@@ -146,50 +147,34 @@
     "tooltip-format": "{controller_alias}\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
+
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{icon} {device_battery_percentage}%",
     "max-length": 15
-    },
+  },
 
-    "mpris": {
+  "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
     "player-icons": { 
-      "default": "▶",
+      "default": "  ",
       "mpv": "🎵"
     },
     "status-icons": {
-      "paused": ""
+      "paused": " "
     },
     "max-length": 20,
     "interval": 1
-    },
+  },
 
-    "custom/notifications": {
-    "format": "{icon} {}",
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
     "format-icons": {
-      "email-notification": "<span foreground='white'><sup></sup></span>",
-      "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
-      "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
-      "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
-      "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
-      "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
-      "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
-      "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
-      "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
-      "notification": "<span foreground='white'><sup></sup></span>",
-      "dnd": "",
-      "none": ""
+      "locked": "󰌾 ",
+      "unlocked": " "
     },
-    "return-type": "json",
-    "exec-if": "which dunstctl",
-    "exec": "~/Documents/hyprdots/Configs/.local/share/bin/notifications.py",
-    "on-scroll-down": "sleep 0.1 && dunstctl history-pop",
-    "on-click": "dunstctl set-paused toggle",
-    "on-click-middle": "dunstctl history-clear",
-    "on-click-right": "dunstctl close-all",
-    "interval": 1,
-    "tooltip": true
-    // "escape": true
-  }
+    "interval": 1
+  },
 }
 
