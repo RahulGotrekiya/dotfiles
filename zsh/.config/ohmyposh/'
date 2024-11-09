@@ -1,6 +1,9 @@
-console_title_template = '{{ .Shell }} in {{ .Folder }}'
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
 version = 3
 final_space = true
+# auto_upgrade = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
 [palette]
   blue = '#57C7FF'
@@ -30,6 +33,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
+    template = '  ~ Update available '
     foreground = 'yellow2'
     background = 'transparent'
     type = 'upgrade'

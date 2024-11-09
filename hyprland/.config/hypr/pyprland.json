@@ -1,0 +1,15 @@
+{
+  "pyprland": {
+    "plugins": ["magnify", "layout_center"]
+  },
+  "layout_center": {
+    "on_new_client": "foreground",
+    "margin": 60,
+    "offset": [0, 10],
+    "next": "movefocus r",
+    "prev": "movefocus l",
+    "next2": "movefocus d",
+    "prev2": "movefocus u",
+    "style": ["opacity 1", "bordercolor rgb(FFFF00)"]
+  }
+}
