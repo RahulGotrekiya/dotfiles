@@ -1,11 +1,10 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 8,
+  "margin-top": 7,
 
   "modules-left": [
     "clock",
-    "custom/weather",
     "mpris",
   ],
 
@@ -14,8 +13,9 @@
   ],
 
   "modules-right": [
-    "bluetooth",
+    // "bluetooth",
     "custom/pacman",
+    "custom/weather",
     "pulseaudio",
     "network",
     "battery",
@@ -156,7 +156,7 @@
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
     "player-icons": { 
-      "default": "  ",
+      "default": "󰎆  ",
       "mpv": "🎵"
     },
     "status-icons": {
