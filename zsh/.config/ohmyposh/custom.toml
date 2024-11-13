@@ -22,7 +22,10 @@ final_space = true
 [transient_prompt]
   template = '❯ '
   background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:magenta{{end}}']
+  foreground_templates = [
+    '{{if gt .Code 0}}p:red{{end}}',
+    '{{if eq .Code 0}}p:magenta{{end}}'
+  ]
 
 [[blocks]]
   type = 'prompt'
@@ -30,6 +33,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
+    template = '  ~ Update available '
     foreground = 'yellow2'
     background = 'transparent'
     type = 'upgrade'
@@ -117,4 +121,7 @@ final_space = true
     background = 'transperent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:magenta{{end}}']
+    foreground_templates = [
+      '{{if gt .Code 0}}p:red{{end}}', 
+      '{{if eq .Code 0}}p:magenta{{end}}'
+    ]
