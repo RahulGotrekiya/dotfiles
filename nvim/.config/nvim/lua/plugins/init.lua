@@ -12,14 +12,12 @@ return {
   require "plugins.custom.live-server", -- Live server
   require "plugins.custom.tmux-navigator", -- Tmux navigator
   require "plugins.custom.surround", -- Surround
-  require "plugins.custom.file-browser", -- Telescope File browser
   require "plugins.custom.lazygit", -- lazygit
   require "plugins.custom.yazi", -- yazi
   require "plugins.custom.todo", -- TODO:
   require "plugins.custom.ts-autotag", -- HTML AutoCloser
   require "plugins.custom.undotree", -- UndoTree
   require "plugins.custom.flash", -- flash.nvim for Jumping
-  -- require "plugins.custom.codeium", -- Codeium
   require "plugins.custom.zenmode", -- Zen mode
   require "plugins.custom.twilight", -- Twilight
   require "plugins.custom.auto-save", -- Auto save
@@ -38,6 +36,4 @@ return {
     event = "VeryLazy",
     enabled = vim.fn.has "nvim-0.10.0" == 1,
   },
-
-  -- Linting
 }

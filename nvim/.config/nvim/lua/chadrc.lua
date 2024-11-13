@@ -5,13 +5,13 @@
 local M = {}
 
 M.base46 = {
-  theme = "everblush",
-  transparency = true,
-  theme_toggle = { "everblush", "catppuccin" },
+  theme = "tokyonight",
+  -- transparency = true,
+  theme_toggle = { "tokyonight", "catppuccin" },
   hl_override = {
     Comment = { italic = true },
-    ["@comment"] = { italic = true },
-    Visual = { bold = true, italic = true },
+    ["@comment"] = { italic = true, bold = true },
+    Visual = { italic = true, bold = true },
   },
   hl_add = {
     yankvisual = { link = "cursorcolumn" },
@@ -34,7 +34,7 @@ M.ui = {
   telescope = { style = "borderless" }, -- borderless / bordered
 
   statusline = {
-    theme = "default", -- default/vscode/vscode_colored/minimal
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "block",
@@ -56,10 +56,10 @@ M.term = {
   sizes = { sp = 0.3, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
   float = {
     relative = "editor",
-    row = 0.3,
-    col = 0.25,
-    width = 0.5,
-    height = 0.4,
+    row = 0.1,
+    col = 0.14,
+    width = 0.7,
+    height = 0.7,
     border = "single",
   },
 }
