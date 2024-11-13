@@ -2,8 +2,8 @@
 live_config_reload = true
 
 import = [
-  "~/.config/alacritty/colors.toml", 
-  # "~/.cache/wal/colors-alacritty.toml",
+  # "~/.config/alacritty/colors.toml", 
+  "~/.config/alacritty/tokyo.toml",
   "~/.config/alacritty/fonts.toml",
 ]
 
@@ -21,7 +21,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
 dynamic_title = true
-# opacity = 0.8
+# opacity = 0.9
 blur = true
 decorations = "full"
 
@@ -30,8 +30,8 @@ columns = 120
 lines = 29
 
 [window.padding]
-x = 25
-y = 25
+x = 20
+y = 10
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"

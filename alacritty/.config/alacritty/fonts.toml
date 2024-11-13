@@ -2,7 +2,7 @@
 draw_bold_text_with_bright_colors = false
 
 [font]
-# size = 14.0
+# size = 13.0
 size = 16.0
 # size = 18.0
 
@@ -14,10 +14,6 @@ style = "Regular"
 family = "JetBrainsMono Nerd Font"
 style = "Bold"
 # style = "ExtraBold"
-
-[font.bold_italic]
-family = "JetBrainsMono Nerd Font"
-style = "BoldItalic"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
