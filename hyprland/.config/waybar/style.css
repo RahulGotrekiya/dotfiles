@@ -1,4 +1,3 @@
-/* @import url("/home/rahul/.cache/wal/colors-waybar.css"); */
 @import url("colors.css");
 
 * {
@@ -53,27 +52,27 @@ window#waybar {
 #custom-weather,
 #custom-media,
 #keyboard-state {
-  color: @color5; /* color5 */
-  background-color: @background; /* background */
-  margin: 0 6px 0 6px;
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+  color: @color5;
+  background-color: @background;
+  margin: 0 6px;
+  padding: 0 15px;
 }
 
 #network {
-  color: @color2; /* color2 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+  color: @color2;
+  background-color: @background;
+  padding: 0 15px;
 }
 
 #clock {
   color: @color7;
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px;
+  background-color: @background;
+  padding: 0 15px;
   margin-right: 6px;
 }
 
 #backlight {
-  color: @color3; /* color5 */
+  color: @color3;
   margin: 0 0 0 6px;
 }
 
@@ -82,17 +81,17 @@ window#waybar {
 }
 
 #network {
-  color: @color4; /* color4 */
+  color: @color4;
 }
 
 #pulseaudio {
-  color: @color5; /* color5 */
+  color: @color5;
 }
 
 #custom-weather {
-  color: @color4; /* color2 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+  color: @color4;
+  background-color: @background;
+  padding: 0 15px;
 }
 
 #custom-pacman {
@@ -101,9 +100,9 @@ window#waybar {
 
 #custom-media,
 #mpris {
-  color: @color1; /* color2 */
-  background-color: @background; /* background */
-  padding: 0 15px 0 15px; /* top, right, bottom, left */
+  color: @color1;
+  background-color: @background;
+  padding: 0 15px;
 }
 
 #bluetooth {

@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "margin-top": 7,
+  "margin-top": 13,
 
   "modules-left": [
     "clock",
@@ -101,7 +101,7 @@
     "on-click-right": "kitty --title nmtui-special nmtui",
     "format": "{ifname}",
     "format-alt": "<span foreground='#99ffdd'>   {bandwidthDownBytes}</span> <span foreground='#ffcc66'>   {bandwidthUpBytes}</span>",
-    "format-wifi": "{icon} {essid}",
+    "format-wifi": "{icon}  {essid}",
     "format-ethernet": "󰈀   Ethernet",
     "format-disconnected": "󰤭   disconnected",
     "max-length": 50,
