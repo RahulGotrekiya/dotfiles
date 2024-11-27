@@ -83,6 +83,13 @@ final_space = true
     type = 'docker'
     style = 'plain'
 
+  [[blocks.segments]]
+    template = '  {{ .Full }}'
+    foreground = 'p:blue'
+    background = 'transperent'
+    type = 'java'
+    style = 'plain'
+
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'

@@ -70,6 +70,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 #alias ls='ls --color'
 alias nv='nvim'
+alias v='nvim'
 alias c='clear'
 alias rrr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias lampp='sudo /opt/lampp/lampp start'
