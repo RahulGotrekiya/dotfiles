@@ -4,7 +4,6 @@
   font-family: "Radio Canada Big", sans-serif;
   font-weight: bold;
   font-size: 14px;
-  border-radius: 50px;
 }
 
 window#waybar {
@@ -15,6 +14,7 @@ window#waybar {
 #workspaces button {
   padding-right: 11px;
   padding-left: 6px;
+  border-radius: 18px;
 }
 
 #workspaces button.urgent {
@@ -31,6 +31,7 @@ window#waybar {
 
 #workspaces {
   background-color: @background;
+  border-radius: 18px;
 }
 
 .modules-left {
@@ -39,6 +40,7 @@ window#waybar {
 
 .modules-right {
   margin-right: 20px;
+  border-radius: 18px;
 }
 
 #custom-notifications,
@@ -56,6 +58,7 @@ window#waybar {
   background-color: @background;
   margin: 0 6px;
   padding: 0 15px;
+  border-radius: 18px;
 }
 
 #network {
@@ -68,6 +71,7 @@ window#waybar {
   color: @color7;
   background-color: @background;
   padding: 0 15px;
+  border-radius: 18px;
   margin-right: 6px;
 }
 

@@ -14,6 +14,7 @@
 
   "modules-right": [
     // "bluetooth",
+    "tray",
     "custom/pacman",
     "custom/weather",
     "pulseaudio",
@@ -21,6 +22,11 @@
     "battery",
     "backlight"
   ],
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
 
   "custom/pacman": {
     "format": "{}",
@@ -51,10 +57,9 @@
       "critical": 20
     },
     "format": "{icon}  {capacity}%",
-    "format-charging": "   {capacity}%",
-    //"format-charging": "󰂄  {capacity}%",
+    "format-charging": "<span color='#c3e88d'>󱐋</span>  {capacity}%",
     "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
+    "tooltip-format": "{time} left",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "interval": 1
   },
@@ -78,7 +83,6 @@
 
   "pulseaudio": {
     "format": "{icon}   {volume}%",
-    //"format-bluetooth": "󰂱  {volume}%",
     "format-bluetooth": "    {volume}%",
     "format-muted": "󰖁",
     "scroll-step": 1,
@@ -97,15 +101,15 @@
   },
 
   "network": {
-    //"interface": "wlo1",
-    "on-click-right": "kitty --title nmtui-special nmtui",
     "format": "{ifname}",
-    "format-alt": "<span foreground='#99ffdd'>   {bandwidthDownBytes}</span> <span foreground='#ffcc66'>   {bandwidthUpBytes}</span>",
     "format-wifi": "{icon}  {essid}",
     "format-ethernet": "󰈀   Ethernet",
     "format-disconnected": "󰤭   disconnected",
     "max-length": 50,
-    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "]
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "tooltip-format": "{essid}",
+    "on-click": "nm-applet",
+    "on-click-right": "killall nm-applet",
   },
 
   "hyprland/workspaces": {
@@ -143,7 +147,7 @@
     "format-connected-battery": "{icon}  {num_connections}",
     "format-connected-battery": "{icon}  {device_alias}-{device_battery_percentage}%",
     "format-icons": ["󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
-    "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device If this config option is not defined or none of the devices in the list are connected, it will fall back to showing the last connected device.
+    "format-device-preference": [ "device1", "device2" ],
     "tooltip-format": "{controller_alias}\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
