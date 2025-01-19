@@ -13,14 +13,6 @@ map("n", "<C-t>", function()
   require("minty.huefy").open { border = true }
 end, { desc = "open colorPicker" })
 
---nvchad/menu
-map("n", "<RightMouse>", function()
-  vim.cmd.exec '"normal! \\<RightMouse>"'
-
-  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
-  require("menu").open(options, { mouse = true })
-end, {})
-
 -- change tab with alt+{no} like alt+1
 for i = 1, 9, 1 do
   map("n", string.format("<A-%s>", i), function()

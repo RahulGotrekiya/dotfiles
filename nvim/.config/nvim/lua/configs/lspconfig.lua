@@ -10,6 +10,7 @@ local servers = {
   "clangd",
   "eslint",
   "ts_ls",
+  "nil_ls",
   "tailwindcss",
   "intelephense",
 }
@@ -57,11 +58,23 @@ lspconfig.ts_ls.setup {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-    root_dir = get_php_root_dir,
     settings = {
       intelephense = {
         files = {
           maxSize = 1000000,
+        },
+      },
+    },
+  },
+
+  lspconfig.nil_ls.setup {
+    autostart = true,
+    capabilities = capabilities,
+    settings = {
+      ["nil"] = {
+        testSetting = 42,
+        formatting = {
+          command = { "nixfmt" },
         },
       },
     },
