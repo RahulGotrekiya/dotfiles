@@ -1,0 +1,5 @@
+configuration {
+    font: "JetBrainsMono Nerd Font SemiBold 14";
+    show-icons: true;
+}
+
