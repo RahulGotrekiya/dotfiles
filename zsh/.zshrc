@@ -72,12 +72,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias nv='nvim'
 alias v='nvim'
 alias c='clear'
+alias t='tmux'
 alias rrr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 alias lampp='sudo /opt/lampp/lampp start'
 alias slampp='sudo /opt/lampp/lampp stop'
 alias rlampp='sudo /opt/lampp/lampp restart'
 
-# ls replaced with eza 
+# ls replaced with eza
 alias ls='eza --icons'
 alias lsa='eza -a --icons'
 alias ld='eza -lD --icons'    # List only Directories
@@ -106,7 +107,7 @@ alias fanauto='sudo nbfc stop'
 eval "$(zoxide init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-PATH=~/.console-ninja/.bin:$PATH
+
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 source <(fzf --zsh)
@@ -123,3 +124,7 @@ function yy() {
 
 #Display Pokemon
 pokemon-colorscripts --no-title -r 1,3,6
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
