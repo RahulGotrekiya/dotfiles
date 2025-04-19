@@ -1,9 +1,0 @@
-* {
-    font:           "MonaSans Bold 11.00";
-    background:     #1d1f21;
-    background-alt: #1d1f21;
-    foreground:     #ffffff;
-    selected:       #b294bb;
-    active:         #A7C080;
-    urgent:         #cc6666;
-}
