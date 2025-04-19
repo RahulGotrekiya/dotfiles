@@ -5,9 +5,7 @@
 )
 
 (defsrc
-  caps 
-  a s d f 
-  j k l ;
+  caps tab a s d f g h j k l ; ralt
 )
 
 (defvar
@@ -17,6 +15,7 @@
 
 (defalias
   escctrl (tap-hold 300 100 esc lctrl)
+  ;; Home row mods
   a-mod (tap-hold $tap-time $hod-time a lmet)
   s-mod (tap-hold $tap-time $hod-time s lalt)
   d-mod (tap-hold $tap-time $hod-time d lsft)
@@ -25,10 +24,17 @@
   k-mod (tap-hold $tap-time $hod-time k rsft)
   l-mod (tap-hold $tap-time $hod-time l ralt)
   ;-mod (tap-hold $tap-time $hod-time ; rmet)
+
+  ;; Layer switching - modified to use tap-hold for Right Alt
+  ;; Tap to toggle between layers, hold for temporary access
+  navtoggle (tap-hold 200 200 (layer-switch navigation) (layer-toggle navigation))
+  tobase (layer-switch base)
 )
 
 (deflayer base
-  @escctrl
-  @a-mod @s-mod @d-mod @f-mod
-  @j-mod @k-mod @l-mod @;-mod
+  @escctrl tab @a-mod @s-mod @d-mod @f-mod g h @j-mod @k-mod @l-mod @;-mod @navtoggle
+)
+
+(deflayer navigation
+  @escctrl @tobase @a-mod @s-mod @d-mod @f-mod g left down up right ; @navtoggle
 )
