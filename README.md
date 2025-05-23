@@ -1,6 +1,6 @@
-<div>
+<div align="center">
+  <img  align="center" width="300" src="https://github.com/user-attachments/assets/5efa9526-3756-4e3f-bb03-5666b09f1812">
   <h1 align="center">My dotfiles<p align="center" dir="auto"> </p></h1>
-  
 </div>
 
 ## ⚡ Screenshots
